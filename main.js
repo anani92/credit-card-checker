@@ -52,7 +52,7 @@ const validateCred = (arr) => {
     let sum = 0;
     for(let i= arr.length-2; i >= 0; i-=2){
         for (let j = arr.length-1;j >= 0; j-=2) { 
-        if (arr[i] * 2 > 9){  let sum = 0;
+        if (arr[i] * 2 > 9){ 
             for(let i= arr.length-2; i >= 0; i-=2){
                 for (let j = arr.length-1;j >= 0; j-=2) { 
                     if (arr[i] * 2 > 9){
@@ -73,54 +73,54 @@ const validateCred = (arr) => {
           
           }
           
-          
-          function findInvalidCards(arr) {
-            let invalids = []
-            for (let item in arr) {
-              if (!validateCred(arr[item])){
-                invalids.push(arr[item])
-              }
-            }
-            return invalids
-          }
-          
-          
-          function idInvalidCardCompanies(arr) {
-            let companies = [];
-            for (let card in arr) {
-              if (arr[card][0] === 3) {
-                companies.push('Amex (American Express)')
-              } else if (arr[card][0] === 4) {
-                  companies.push('Visa')
-              } else if (arr[card][0] === 5) {
-                  companies.push('Masercard')
-             } else if (arr[card][0] === 6) {
-                  companies.push('Discover')
-             } else {
-               companies.push('Company not found')
-             }
-            
-            }
-            return companies
-          }
-          
-          console.log(idInvalidCardCompanies(batch))
-          
-          
-        else {
-            sum += arr[i] * 2;
-        }
-        sum += arr[j]
-        }
-    }
 
-    if (sum % 10 === 0){
-        return true
-    } else {
-        return false
-    }
+      function findInvalidCards(arr) {
+        let invalids = []
+        for (let item in arr) {
+          if (!validateCred(arr[item])){
+            invalids.push(arr[item])
+          }
+        }
+        return invalids
+      }
+
+
+function idInvalidCardCompanies(arr) {
+    let companies = [];
+    for (let card in arr) {
+      if (arr[card][0] === 3) {
+        companies.push('Amex (American Express)')
+      } else if (arr[card][0] === 4) {
+          companies.push('Visa')
+      } else if (arr[card][0] === 5) {
+          companies.push('Masercard')
+     } else if (arr[card][0] === 6) {
+          companies.push('Discover')
+     } else {
+       companies.push('Company not found')
+     }
 
     }
+    return companies
+    }
+
+console.log(idInvalidCardCompanies(batch))
+
+
+    else {
+        sum += arr[i] * 2;
+    }
+    sum += arr[j]
+    }
+}
+
+if (sum % 10 === 0){
+    return true
+} else {
+    return false
+}
+
+}
 
 
 function findInvalidCards(arr) {
