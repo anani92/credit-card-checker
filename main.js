@@ -52,7 +52,6 @@ const validateCred = (arr) => {
     let sum = 0;
     for(let i= arr.length-2; i >= 0; i-=2){
         for (let j = arr.length-1;j >= 0; j-=2) { 
-        if (arr[i] * 2 > 9){ 
             for(let i= arr.length-2; i >= 0; i-=2){
                 for (let j = arr.length-1;j >= 0; j-=2) { 
                     if (arr[i] * 2 > 9){
