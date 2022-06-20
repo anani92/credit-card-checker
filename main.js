@@ -52,26 +52,24 @@ const validateCred = (arr) => {
     let sum = 0;
     for(let i= arr.length-2; i >= 0; i-=2){
         for (let j = arr.length-1;j >= 0; j-=2) { 
-            for(let i= arr.length-2; i >= 0; i-=2){
-                for (let j = arr.length-1;j >= 0; j-=2) { 
-                    if (arr[i] * 2 > 9){
-                    sum += (arr[i] * 2) -9;
-                    }
-                    else {
-                    sum += arr[i] * 2;
-                    }
-                    sum += arr[j]
-              }
-            }
-          
-            if (sum % 10 === 0){
-                return true
-            } else {
-                return false
-            }
-          
+                if (arr[i] * 2 > 9){
+                sum += (arr[i] * 2) -9;
+                }
+                else {
+                sum += arr[i] * 2;
+                }
+                sum += arr[j]
           }
-          
+        }
+
+        if (sum % 10 === 0){
+            return true
+        } else {
+            return false
+        }
+
+      }
+
 
 function findInvalidCards(arr) {
     let invalids = []
